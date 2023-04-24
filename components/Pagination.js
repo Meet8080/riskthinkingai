@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Posts from "./Posts";
-import NumberOfPages from "./NumberOfPages";
+import NumberOfPages from "./Numberofpages";
 // import { Pagination } from './pagination/pagination';
 
 export const Pagination = ({ meet }) => {
