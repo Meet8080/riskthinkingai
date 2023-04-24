@@ -14,9 +14,14 @@ import Map from "../../components/map";
 // import Map from "";
 
 export default function Home() {
+  const Map = dynamic(() => import("../../components/map"), {
+    loading: () => <p>loading...</p>,
+    ssr: false,
+  });
   return (
     <div>
       {/* <Pagination meet={undefined} /> */}
+
       <Map />
     </div>
   );

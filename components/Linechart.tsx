@@ -29,7 +29,6 @@ interface LocationData {
   Year: number;
   riskRating: number;
 }
-
 export const LineChart: React.FC = () => {
   const [userdata, setUserdata] = useState({
     labels: location.map((item) => item.Year),
@@ -68,17 +67,17 @@ export const LineChart: React.FC = () => {
     },
   };
   
-  const interaction: InteractionOptions = {
-    mode: 'index',
-    intersect: false,
-    onHover: handleHover,
-  };
+//   const interaction: InteractionOptions = {
+//     mode: 'index',
+//     intersect: false,
+//     onHover: handleHover,
+//   };
   
-  const options = Object.assign({}, chartOptions, { interaction });
+//   const options = Object.assign({}, chartOptions, { interaction });w
   
   return (
     <div>
-      <Line data={userdata} options={options} />
+      <Line data={userdata}  />
       {hoverData && (
         <div>
           <p>Year: {hoverData.Year}</p>
@@ -89,41 +88,5 @@ export const LineChart: React.FC = () => {
     </div>
   );
 };
-
-
-
-// import React, { useState } from 'react'
-// import {Line} from 'react-chartjs-2';
-// import {location} from '../data/location.js';
-// import {
-//     Chart as ChartJS,
-//     CategoryScale,
-//     LinearScale,
-//     PointElement,
-//     LineElement,
-//     Title,
-//     Tooltip,
-//     Legend,
-//   } from 'chart.js';
-
-//   ChartJS.register(
-//     CategoryScale,
-//     LinearScale,
-//     PointElement,
-//     LineElement,
-//     Title,
-//     Tooltip,
-//     Legend
-//   );
-
-// export const Linechart = () => {
-//      const [userdata, setUserdata] = useState({labels: location.map((item)=>item.Year),
-//       datasets: [{label:'Business Category', data:location.map((item)=>item.riskRating), borderColor: 'rgb(53, 162, 235)',
-//       backgroundColor: 'rgba(53, 162, 235, 0.5)',}]})
-     
-//   return (
-//     <div><Line data={userdata} ></Line></div>
-//   )
-// }
 
 
